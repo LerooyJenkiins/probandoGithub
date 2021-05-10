@@ -74,7 +74,7 @@ public class gitHub extends Application {
 				alert.setContentText("Faltan campos por rellenar");
 				alert.showAndWait();
 
-			}else{
+			}else if(nombreUsuarioTxt.getText().equals("Holamundo") && password.getText().equals("1234")){
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Warning Dialog");
 				alert.setHeaderText(null);
@@ -82,6 +82,12 @@ public class gitHub extends Application {
 				alert.showAndWait();
 				Platform.exit();
 
+			}else {
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Warning Dialog");
+				alert.setHeaderText(null);
+				alert.setContentText("Login incorrecto");
+				alert.showAndWait();
 			}
 
 		});
