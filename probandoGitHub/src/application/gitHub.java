@@ -26,6 +26,7 @@ public class gitHub extends Application {
 	@Override
 	public void start(Stage stage) {
 
+		//Creamos un borderPane que sera nuestro panel principal
 		BorderPane principal = new BorderPane();
 		Text tituloApp = new Text("GitHub Project");
 		tituloApp.setFont(Font.font("Power Green", FontWeight.BOLD, 48.00));
@@ -33,6 +34,8 @@ public class gitHub extends Application {
 		principal.setTop(tituloApp);
 		principal.setBackground(new Background(new BackgroundFill(Color.AZURE, CornerRadii.EMPTY, Insets.EMPTY)));
 		BorderPane.setMargin(tituloApp, new Insets(50.00, 0.0, 0.00, 200.0));
+
+		//Creamos un grid panel con los campos a rellenar por el usuario
 		GridPane gridCentral = new GridPane();
 		BorderPane.setMargin(gridCentral, new Insets(20.00, 0.0, 0.0, 220.0));
 		gridCentral.setHgap(10.0);
@@ -49,14 +52,19 @@ public class gitHub extends Application {
 		gridCentral.add(password, 1, 1);
 		Button enter = new Button("Enter");
 		enter.setPrefWidth(280.0);
+		int cifra;
+		//Añadimos el grid al panel principal
 		gridCentral.add(enter, 0, 2, 2, 1);
 		principal.setCenter(gridCentral);
+
+		//Creamos la escena, metemos el panel principal y la mostramos
 		Scene scene = new Scene(principal, 700, 300);
 		stage.setScene(scene);
 		stage.setTitle("GitHub");
 		stage.show();
 
 
+		//Evento al pulsar el boton Enter
 		enter.setOnAction(value -> {
 
 			if (nombreUsuarioTxt.getText().equals("") || password.getText().equals("") ){
@@ -67,6 +75,11 @@ public class gitHub extends Application {
 				alert.showAndWait();
 
 			}else{
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Warning Dialog");
+				alert.setHeaderText(null);
+				alert.setContentText("Login con Éxito");
+				alert.showAndWait();
 				Platform.exit();
 
 			}
