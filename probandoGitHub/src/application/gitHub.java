@@ -27,19 +27,19 @@ public class gitHub extends Application {
 	public void start(Stage stage) {
 
 		BorderPane principal = new BorderPane();
-		Text tituloApp = new Text("GitHub Project");
+		Text tituloApp = new Text("GitHub RED Project");
 		tituloApp.setFont(Font.font("Power Green", FontWeight.BOLD, 48.00));
-		tituloApp.setFill(Color.LIGHTGREEN);
+		tituloApp.setFill(Color.RED);
 		principal.setTop(tituloApp);
-		principal.setBackground(new Background(new BackgroundFill(Color.AZURE, CornerRadii.EMPTY, Insets.EMPTY)));
+		principal.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
 		BorderPane.setMargin(tituloApp, new Insets(50.00, 0.0, 0.00, 200.0));
 		GridPane gridCentral = new GridPane();
 		BorderPane.setMargin(gridCentral, new Insets(20.00, 0.0, 0.0, 220.0));
 		gridCentral.setHgap(10.0);
 		gridCentral.setVgap(10.0);
-		Text nombreUsuario = new Text("Nombre de usuario: ");
+		Text nombreUsuario = new Text("Correo electrónico: ");
 		TextField nombreUsuarioTxt = new TextField("");
-		nombreUsuarioTxt.setPromptText("Ej: HolaMundo67...");
+		nombreUsuarioTxt.setPromptText("Ej: HolaMundo67@hotmail.com...");
 		gridCentral.add(nombreUsuario, 0, 0);
 		gridCentral.add(nombreUsuarioTxt, 1, 0);
 		Text passwordTxt = new Text("Contraseña: ");
